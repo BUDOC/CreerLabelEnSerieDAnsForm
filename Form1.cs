@@ -29,7 +29,7 @@ namespace CreerLabelEnSerieDAnsForm
                     cpt++;
                     Label L = new System.Windows.Forms.Label();
                     L.Parent = this;
-                    //  L.Click += new EventHandler(Label_Click);
+                     L.Click += new EventHandler(LableEstChoisi);
                     T = "L" + cpt.ToString();
                     L.Text = T;
                     L.Name = T;
@@ -41,6 +41,11 @@ namespace CreerLabelEnSerieDAnsForm
                 }
                 cpt++;
             }
+        }
+        private void LableEstChoisi(object sender, EventArgs e)
+        {        
+            Label choisi = (Label)sender;
+            this.Text="Label " + choisi.Name + " a été cliqué.";
         }
     }
 }
